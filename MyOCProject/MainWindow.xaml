@@ -1,0 +1,64 @@
+﻿<Window x:Class="MyOCProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="800">
+    <Grid >
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" ></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.ColumnSpan="3" Background="Black">
+            <Label  FontStyle="Normal" FontSize="55" Foreground="White" FontFamily="Impact" Content="MyOCProject" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0" TextWrapping="Wrap" x:Name="Tablo2" Text="Введите значение" FontSize="25" FontWeight="Light"/>
+            <Button Grid.Row="1"  BorderBrush="White" Background="Black"   Name="Stop_button"  Click="StopButton_Click">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <Label Content="Ввести длину" Foreground="White" FontSize="30" FontWeight="Light"/>
+                    <Label HorizontalAlignment="Center" Content="плана" Foreground="White" FontSize="30" FontWeight="Light"/>
+                </StackPanel>
+            </Button>
+             </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Content="Начать парсинг" Grid.Row="0" BorderBrush="White" Background="Black" Foreground="White" FontSize="30" FontWeight="Light" Name="Start_button" Click="StartButton_Click"/>
+            <Viewbox Grid.Row="1" Margin="0 0 15 0">
+                <CheckBox  Content="Планировщик потоков" x:Name="PlanChecker" FontWeight="Light" IsChecked="True" />
+            </Viewbox>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Content="Тест Семафора" BorderBrush="White" Background="Black" Foreground="White" FontSize="30" FontWeight="Light" Grid.Row="0" Click="Button_Click"/>
+            <GroupBox Grid.Row="1" Header="Тип семафора"  >
+                <StackPanel Grid.Row="1"   VerticalAlignment="Center" Margin="0 0 10 0">
+                    <Viewbox Margin="0 0 0 10">
+                        <RadioButton GroupName="sem" Click="RadioButton_Click" Checked="Checked" Name="radioSys" IsChecked="True" FontWeight="Light" Foreground="Black" Content="Семафор .NET"/>
+                    </Viewbox>
+                    <Viewbox Margin="0 10 0 0">
+                        <RadioButton GroupName="sem" Click="RadioButton_Click" Checked="Checked" Name="radioMy" IsChecked="False" FontWeight="Light" Foreground="Black" Content="Мой семафор"/>
+                    </Viewbox>
+                </StackPanel>
+            </GroupBox>
+
+        </Grid>
+    </Grid>
+</Window>
